@@ -3,15 +3,7 @@
   "services": {
     "frontend": {
       "root": "frontend",
-      "framework": "vite",
-      "bindings": [
-        {
-          "type": "service",
-          "service": "backend",
-          "format": "url",
-          "env": "BACKEND_INTERNAL_URL"
-        }
-      ]
+      "framework": "vite"
     },
     "backend": {
       "root": "backend",
@@ -19,6 +11,12 @@
     }
   },
   "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "backend"
+      }
+    },
     {
       "source": "/(.*)",
       "destination": {
