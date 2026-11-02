@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { WRITER_TOKEN_STORAGE_KEY, USER_TOKEN_STORAGE_KEY } from "../constants/storageKeys";
 import { AppContext } from "./app-context";
 
-const baseURL = import.meta.env.VITE_BASE_URL;
+const baseURL = import.meta.env.VITE_BASE_URL || "";
 const api = axios.create({ baseURL });
 const writerAxios = axios.create({ baseURL });
 const userAxios = axios.create({ baseURL });
